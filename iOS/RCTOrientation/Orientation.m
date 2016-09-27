@@ -122,6 +122,7 @@ RCT_EXPORT_METHOD(lockToPortrait)
   [Orientation setOrientation:UIInterfaceOrientationMaskPortrait];
   [[NSOperationQueue mainQueue] addOperationWithBlock:^ {
     [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger: UIInterfaceOrientationPortrait] forKey:@"orientation"];
+    [UIViewController attemptRotationToDeviceOrientation];
   }];
 
 }
